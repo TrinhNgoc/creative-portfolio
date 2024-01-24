@@ -17,7 +17,12 @@ const nextConfig = {
   //   styledComponents: true,
   // },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
-  images: {},
+  images: {remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com',
+      },
+    ]},
   webpack(config, { isServer }) {
     if (!isServer) {
       // We're in the browser build, so we can safely exclude the sharp module
